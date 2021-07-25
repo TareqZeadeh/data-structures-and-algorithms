@@ -60,18 +60,15 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 ------------------------------------------------------------------------------------------------ */
 
 const greeting = (word) => {
-  let words='';
-  words=word.forEach(element => {
-    element.toUpperCase()+'!';
-  });
-  return words;
+  return word.toUpperCase() + '!';
 };
 
 const speaker = (words, callback) => {
-  let newarr=[];
-  words.forEach(element => {
+  let newarr = [];
+  words.forEach((element) => {
     newarr.push(callback(element));
-  });return newarr;
+  });
+  return newarr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -91,11 +88,15 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-  // Solution code here...
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
+  for (let i = 0; i < times; i++) {
+    callback(arr, num);
+  }
+
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -117,7 +118,14 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // Solution code here...
+  let newarr = [];
+
+  availableItems.forEach((element) => {
+    if (element.available === true) {
+      newarr.push(element.name);
+    }
+  });
+  return newarr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -135,7 +143,19 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  let newarr = [];
+  arr.forEach((element) => {
+    if (element % 3 === 0 && element % 5 === 0) {
+      newarr.push('Fizz Buzz');
+    } else if (element % 3 === 0) {
+      newarr.push('Fizz');
+    } else if (element % 5 === 0) {
+      newarr.push('Buzz');
+    } else {
+      newarr.push(element);
+    }
+  });
+
 };
 
 /* ------------------------------------------------------------------------------------------------
