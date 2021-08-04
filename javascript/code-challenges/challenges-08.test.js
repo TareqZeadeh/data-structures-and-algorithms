@@ -151,14 +151,25 @@ const citiesAtoJ = (arr) => {
   // });
   // return newcitiesarr;
 
-  let regexl = /^\b[A-J]/g;
+  // let regexl = /^\b[A-J]/g;
+  // let newcitiesarr = [];
+  // for (let i = 0; i < arr.length; i++) {
+  //   if (regexl.test(arr[i])) {
+  //     newcitiesarr.push(arr);
+  //   }
+  // }
+  // return newcitiesarr;
+
+
+
+  let regexl = /^[A-J]\w*/g;
   let newcitiesarr = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (regexl.test(arr[i])) {
-      newcitiesarr.push(arr);
-    }
-  }
+  arr.forEach(element => {
+    if (element.match(regexl))
+      newcitiesarr.push(element);
+  });
   return newcitiesarr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
