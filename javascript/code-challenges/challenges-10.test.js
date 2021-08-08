@@ -269,7 +269,7 @@ let lowestWeeklyTemperatureData = [
 ];
 
 const lowestWeeklyAverage = (weather) => {
-  let lowest = Infinity;
+  let lowest = 1000;
   let sum = 0;
   let number = 0;
 
@@ -300,10 +300,12 @@ For example, excel('1,1,1\n4,4,4\n9,9,9') returns [3, 12, 27].
 const excel = (str) => {
   let sum = 0;
   const parsed = str.split('\n');
+  console.log(parsed);
 
   for (let i = 0; i < parsed.length; i++) {
     sum = 0;
     let row = parsed[i].split(',');
+    console.log(row);
 
     for (let j = 0; j < row.length; j++) {
       sum += parseInt(row[j]);
