@@ -3,6 +3,7 @@
 ## Language: `Java`
 
 | Code Challenge |  link |
+| ----------- | ----------- |
 | array-reverse | ------------------- |
 |  Code Challenge 2| ------------------- |
 |  Code Challenge 3| ------------------- |
