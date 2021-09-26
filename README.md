@@ -21,6 +21,7 @@ To run your tests
 ### 401 Data Structures, Code Challenges JAVA
 
 | Code Challenge |  link |
+| ----------- | ----------- |
 | array-reverse | ------------------- |
 |  Code Challenge 2| ------------------- |
 |  Code Challenge 3| ------------------- |
