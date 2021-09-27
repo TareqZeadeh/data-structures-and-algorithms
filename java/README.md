@@ -4,8 +4,8 @@
 
 | Code Challenge |  link |
 | ----------- | ----------- |
-| array-reverse | ------------------- |
-|  Code Challenge 2| ------------------- |
+| array-reverse | [array-reverse](array-reverse/README.md) |
+|  Code Challenge 2| [array-insert-shift](array-insert-shift/README.md)|
 |  Code Challenge 3| ------------------- |
 |  Code Challenge 4| ------------------- |
 |  Code Challenge 5| ------------------- |
