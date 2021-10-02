@@ -1,11 +1,16 @@
 # Singly Linked List
-<!-- Short summary or background information -->
+A Linked List is a sequence of Nodes that are connected/linked to each other. The most defining feature of a Linked List is that each Node references the next Node in the link.
 
 ## Challenge
-<!-- Description of the challenge -->
+Create a Node class that has properties for the value stored in the Node. Create a Linked List class
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+LinkedList approach because is store in dynamic location.
+Big O n/1 for insert in first.
+Big O 1/n for includes.
 
 ## API
-<!-- Description of each method publicly available to your Linked List -->
+have method :
+1. toString.
+2. includes.
+3. insert.
