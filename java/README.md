@@ -5,9 +5,9 @@
 | Code Challenge |  link |
 | ----------- | ----------- |
 | array-reverse | [array-reverse](array-reverse/README.md) |
-|  Code Challenge 2| [array-insert-shift](array-insert-shift/README.md)|
-|  Code Challenge 3| ------------------- |
-|  Code Challenge 4| ------------------- |
+| array-insert-shift| [array-insert-shift](array-insert-shift/README.md)|
+| array-binary-search| [array-binary-search](array-binary-search/README.md)|
+| linked-list|[linked-list](linked-list/README.md)|
 |  Code Challenge 5| ------------------- |
 |  Code Challenge 6| ------------------- |
 |  Code Challenge 7| ------------------- |
