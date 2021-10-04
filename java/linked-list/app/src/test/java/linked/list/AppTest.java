@@ -137,4 +137,55 @@ class AppTest {
     linkedList.insertAfter("G","R");
     assertEquals("{ Z } ->{ A } ->{ D } ->{ H } ->{ G } ->{ R } -> null",linkedList.toString(),"R char should be after G char");
   }
+
+
+  @Test
+  void kIsGreaterThanTheLength(){
+    LinkedList linkedList = new LinkedList();
+    linkedList.append("Z");
+    linkedList.append("A");
+    linkedList.append("D");
+    linkedList.append("H");
+    linkedList.append("G");
+    assertEquals("NO Results",linkedList.kthFromEnd(6),"The number is greater than the size of the list");
+  }
+  @Test
+  void kIsEqualTheSize(){
+    LinkedList linkedList = new LinkedList();
+    linkedList.append("Z");
+    linkedList.append("A");
+    linkedList.append("D");
+    linkedList.append("H");
+    linkedList.append("G");
+    assertEquals("NO Results",linkedList.kthFromEnd(6),"The number is equal the size of the list");
+  }
+  @Test
+  void kIsNotAPositiveInteger(){
+    LinkedList linkedList = new LinkedList();
+    linkedList.append("Z");
+    linkedList.append("A");
+    linkedList.append("D");
+    linkedList.append("H");
+    linkedList.append("G");
+    assertEquals("NO Results",linkedList.kthFromEnd(-1),"Negative numbers is not allowed");
+
+  }
+
+  @Test
+  void linkedListIsOfASize1(){
+    LinkedList linkedList = new LinkedList();
+    linkedList.append("Z");
+    assertEquals("Z",linkedList.kthFromEnd(0),"If kth value should be 0 cause the linked list is one node");
+  }
+  @Test
+  void KthIsInTheMiddelOfTheList(){
+    LinkedList linkedList = new LinkedList();
+    linkedList.append("Z");
+    linkedList.append("A");
+    linkedList.append("D");
+    linkedList.append("H");
+    linkedList.append("G");
+    assertEquals("D",linkedList.kthFromEnd(2),"kth value should be between 0 and the (size of the linked list -1 )");
+  }
+
 }
