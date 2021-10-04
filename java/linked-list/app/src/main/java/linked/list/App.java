@@ -12,27 +12,30 @@ public class App {
 //        System.out.println(new App().getGreeting());
 
     LinkedList linkedList = new LinkedList();
-//    linkedList.insert("T");
-//    linkedList.insert("A");
-//    linkedList.insert("R");
-//    linkedList.insert("I");
-//    linkedList.insert("Q");
-//    linkedList.append("2");
-//    linkedList.insertBefore("2", "3");
-//    linkedList.insertAfter("3", "4");
-//    System.out.println(linkedList);
-//    linkedList.delete("3");
-//    System.out.println(linkedList);
-//    System.out.println(linkedList.includes("H"));
-//    System.out.println(linkedList.includes("T"));
-
-    linkedList.append("Z");
-    linkedList.append("A");
-    linkedList.append("D");
-    linkedList.append("H");
-    linkedList.append("G");
-    linkedList.insertAfter("G","R");
+    linkedList.insert("T");
+    linkedList.insert("A");
+    linkedList.insert("R");
+    linkedList.insert("I");
+    linkedList.insert("Q");
+    linkedList.append("2");
+    linkedList.insertBefore("2", "3");
+    linkedList.insertAfter("3", "4");
     System.out.println(linkedList);
+    linkedList.delete("3");
+    System.out.println(linkedList);
+    System.out.println(linkedList.includes("H"));
+    System.out.println(linkedList.includes("T"));
+
+//    linkedList.append("Z");
+//    linkedList.append("A");
+//    linkedList.append("D");
+//    linkedList.append("H");
+//    linkedList.append("G");
+//    linkedList.insertAfter("G","R");
+//    System.out.println(linkedList.kth(7));
+    String str =linkedList.kthFromEnd(-1);
+    System.out.println(str);
+//    System.out.println(linkedList);
 
 
   }

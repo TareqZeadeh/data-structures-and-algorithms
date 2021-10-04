@@ -41,7 +41,7 @@ public class LinkedList {
   public Node getHead() {
     return head;
   }
-
+//----------------------------challenge06--------------------------------
 
   public void append(String data) {
     Node newNode = new Node(data);
@@ -93,7 +93,7 @@ public class LinkedList {
     }
   }
 
-  //---------------------------Stretch Goal-------------------
+  //---------------------------Stretch Goal challenge06 -------------------
   public void delete(String data) {
     Node current = head;
     Node current1 = head.getNext();
@@ -108,5 +108,41 @@ public class LinkedList {
       current1 = current1.getNext();
     }
 
+  }
+
+  //----------------------------challenge07--------------------------------
+
+
+  public int size() {
+    int size = 0;
+    Node current = head;
+    while (current != null) {
+      size++;
+      current = current.getNext();
+    }
+    System.out.println(size);
+    return size;
+  }
+  public String kthFromEnd(int kth) {
+    Node current = head;
+    int size = size();
+    if (kth < size && kth >= 0) {
+      while (size-- >= 0){
+        if(size == kth){
+          return current.getData();
+        }
+        current = current.getNext();
+      }
+    }else if(kth >= size){
+      try {
+        throw new Exception("Out Of List Rang");
+      }catch (Exception exception){exception.printStackTrace();}
+
+    }else if(kth < 0){
+      try {
+        throw new Exception("Negative numbers is not allowed");
+      }catch (Exception exception){exception.printStackTrace();}
+    }
+return "NO Results";
   }
 }
