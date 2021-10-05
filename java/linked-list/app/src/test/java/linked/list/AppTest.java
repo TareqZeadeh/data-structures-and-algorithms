@@ -4,6 +4,9 @@
 package linked.list;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.function.Supplier;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
@@ -186,6 +189,56 @@ class AppTest {
     linkedList.append("H");
     linkedList.append("G");
     assertEquals("D",linkedList.kthFromEnd(2),"kth value should be between 0 and the (size of the linked list -1 )");
+  }
+
+  @Test
+  void oneOfTheListsEmpty(){
+    LinkedList list1=new LinkedList();
+    LinkedList list2=new LinkedList();
+    list1.append("1");
+    list1.append("3");
+    list1.append("2");
+    list1.append("8");
+    list1.append("10");
+    list1.append("11");
+    list1.append("12");
+    list1.append("13");
+    LinkedList zip=new LinkedList();
+    assertEquals(list1,zip.zipLists(list1,list2),"The second list is empty , it will return the first list");
+    LinkedList list3=new LinkedList();
+    LinkedList list4=new LinkedList();
+    list4.append("1");
+    list4.append("3");
+    list4.append("2");
+    list4.append("8");
+    list4.append("10");
+    list4.append("11");
+    list4.append("12");
+    list4.append("13");
+    LinkedList zip2=new LinkedList();
+    assertEquals(list4,zip2.zipLists(list3,list4),"The first list is empty , it will return the second list");
+
+  }
+  @Test
+  void bothOfTheListsNotEmpty(){
+    LinkedList list1=new LinkedList();
+    list1.append("1");
+    list1.append("3");
+    list1.append("2");
+    list1.append("8");
+    list1.append("10");
+    list1.append("11");
+    list1.append("12");
+    list1.append("13");
+    LinkedList list2=new LinkedList();
+    list2.append("5");
+    list2.append("9");
+    list2.append("4");
+    list2.append("6");
+    list2.append("7");
+    list2.append("10");
+    LinkedList zip=new LinkedList();
+    assertEquals("{ 1 } ->{ 5 } ->{ 3 } ->{ 9 } ->{ 2 } ->{ 4 } ->{ 8 } ->{ 6 } ->{ 10 } ->{ 7 } ->{ 11 } ->{ 10 } ->{ 12 } ->{ 13 } -> null",zip.zipLists(list1,list2).toString());
   }
 
 }

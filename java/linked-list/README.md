@@ -49,3 +49,18 @@ Big O(1) for Space.
 ## API
 have method :
 1.kthFromEnd method
+-----------------------------------------------------------------------
+# Challenge Summary
+Write Write a method that take's two list and zip them into one list.
+
+## Whiteboard Process
+![linked-list-zip](linked-list-zip.jpg)
+
+## Approach & Efficiency
+LinkedList approach because is store in dynamic location.
+Big O(n) for Time.
+Big O(1) for Space.
+
+## API
+have method :
+1.zipLists.
