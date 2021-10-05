@@ -25,18 +25,31 @@ public class App {
     System.out.println(linkedList);
     System.out.println(linkedList.includes("H"));
     System.out.println(linkedList.includes("T"));
-
-//    linkedList.append("Z");
-//    linkedList.append("A");
-//    linkedList.append("D");
-//    linkedList.append("H");
-//    linkedList.append("G");
-//    linkedList.insertAfter("G","R");
-//    System.out.println(linkedList.kth(7));
-    String str =linkedList.kthFromEnd(-1);
+    String str =linkedList.kthFromEnd(3);
     System.out.println(str);
-//    System.out.println(linkedList);
 
+    System.out.println("=================================================================================");
+    System.out.println("=================================================================================");
+    LinkedList list1=new LinkedList();
+    LinkedList list2=new LinkedList();
+    list1.append("1");
+    list1.append("3");
+    list1.append("2");
+    list1.append("8");
+    list1.append("10");
+    list1.append("11");
+    list1.append("12");
+    list1.append("13");
+    System.out.println(list1);
+    list2.append("5");
+    list2.append("9");
+    list2.append("4");
+    list2.append("6");
+    list2.append("7");
+    list2.append("10");
+    System.out.println(list2);
+    LinkedList zip=new LinkedList();
 
+    System.out.println(zip.zipLists(list1,list2));
   }
 }

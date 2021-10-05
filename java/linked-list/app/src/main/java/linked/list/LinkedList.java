@@ -136,13 +136,96 @@ public class LinkedList {
     }else if(kth >= size){
       try {
         throw new Exception("Out Of List Rang");
-      }catch (Exception exception){exception.printStackTrace();}
+      } catch (Exception exception) {
+        exception.printStackTrace();
+      }
 
-    }else if(kth < 0){
+    } else if (kth < 0) {
       try {
         throw new Exception("Negative numbers is not allowed");
-      }catch (Exception exception){exception.printStackTrace();}
+      } catch (Exception exception) {
+        exception.printStackTrace();
+      }
     }
-return "NO Results";
+    return "NO Results";
+  }
+
+
+  //----------------------------challenge08--------------------------------
+
+
+  public static LinkedList zipLists(LinkedList list1, LinkedList list2) {
+    if (list1.head != null && list2.head == null) {
+      System.out.println("The second list is empty");
+      return list1;
+    } else if (list1.head == null && list2.head != null) {
+      System.out.println("The first list is empty");
+      return list2;
+    } else if (list1.head == null && list2.head == null) {
+      throw new NullPointerException("Both of lists are empty");
+    }
+    Node current1 = list1.head;
+    Node current2 = list2.head;
+    int length1 = list1.size();
+    int length2 = list2.size();
+    int indexCount = 0;
+    while (current1.getNext() != null) {
+      list1.insertAfter(indexCount, current2.getData());
+      if (current2.getNext() == null) {
+        break;
+      } else {
+        current1=current1.getNext().getNext();
+        current2 = current2.getNext();
+        indexCount = indexCount + 2;
+      }}if(length2>=length1){
+      while (current2!=null) {
+        list1.append(current2.getData());
+        current2 = current2.getNext();
+      }}
+    return list1;
+  }
+
+
+
+  public Boolean insertAfter(int idx, String Data) {
+    Node newNode = new Node(Data);
+    if (head == null) {
+      head = newNode;
+      return true;
+    } else {
+      int idxCount = 0;
+      Node current = head;
+      while (current != null) {
+        if (idxCount == idx) {
+          newNode.setNext(current.getNext());
+          current.setNext(newNode);
+          idxCount++;
+          break;
+        }
+        idxCount++;
+        current = current.getNext();
+      }
+      return true;
+    }
   }
 }
+//while (current1 != null) {
+//  length1++;
+//  current1 = current1.getNext();
+//  }
+//  while (current2 != null) {
+//  length2++;
+//  current2 = current2.getNext();
+//  }
+//  current1 = list1.getHead();
+//  current2 = list2.getHead();
+//  int maxLength = Math.max(length1,length2);
+//  for (int i=0;i<maxLength;i++){
+//  if(current1!=null){
+//  zippedList.append(current1.getData());
+//  current1=current1.getNext();
+//  }if(current2!=null){
+//  zippedList.append(current2.getData());
+//  current2=current2.getNext();
+//  }
+//  }
