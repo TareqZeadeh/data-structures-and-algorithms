@@ -10,18 +10,18 @@ public class LinkedList {
 
   public void insert(String data) {
     Node newNode = new Node(data);
-    if(head != null)
+    if (head != null)
       newNode.setNext(head);
     head = newNode;
   }
 
-  public boolean includes(String data){
+  public boolean includes(String data) {
     Node current = head;
-    while (current!= null){
-      if(current.getData()== data){
+    while (current != null) {
+      if (current.getData() == data) {
         return true;
       }
-      current =current.getNext();
+      current = current.getNext();
     }
     return false;
   }
@@ -29,8 +29,8 @@ public class LinkedList {
   @Override
   public String toString() {
     Node current = head;
-    String list ="";
-    while (current!= null){
+    String list = "";
+    while (current != null) {
       list = list + "{ " + current.getData() + " } ->";
       current = current.getNext();
     }
@@ -123,17 +123,18 @@ public class LinkedList {
     System.out.println(size);
     return size;
   }
+
   public String kthFromEnd(int kth) {
     Node current = head;
     int size = size();
     if (kth < size && kth >= 0) {
-      while (size-- >= 0){
-        if(size == kth){
+      while (size-- >= 0) {
+        if (size == kth) {
           return current.getData();
         }
         current = current.getNext();
       }
-    }else if(kth >= size){
+    } else if (kth >= size) {
       try {
         throw new Exception("Out Of List Rang");
       } catch (Exception exception) {
@@ -174,17 +175,19 @@ public class LinkedList {
       if (current2.getNext() == null) {
         break;
       } else {
-        current1=current1.getNext().getNext();
+        current1 = current1.getNext().getNext();
         current2 = current2.getNext();
         indexCount = indexCount + 2;
-      }}if(length2>=length1){
-      while (current2!=null) {
+      }
+    }
+    if (length2 >= length1) {
+      while (current2 != null) {
         list1.append(current2.getData());
         current2 = current2.getNext();
-      }}
+      }
+    }
     return list1;
   }
-
 
 
   public Boolean insertAfter(int idx, String Data) {
@@ -207,6 +210,25 @@ public class LinkedList {
       }
       return true;
     }
+  }
+
+
+  //--------------------------Linked List Reverser------------------------------------
+
+
+
+  public static LinkedList LinkedListReverser(LinkedList list){
+  Node current =list.head;
+  LinkedList list1 = new LinkedList();
+  if(list.size()==0){
+    System.out.println("Empty linked list passed to the method , will return empty linked list ");
+  }else {
+    while (current!=null){
+    list1.insert(current.getData());
+    current=current.getNext();
+  }}
+
+  return list1;
   }
 }
 //while (current1 != null) {

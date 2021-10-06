@@ -20,13 +20,13 @@ public class App {
     linkedList.append("2");
     linkedList.insertBefore("2", "3");
     linkedList.insertAfter("3", "4");
-    System.out.println(linkedList);
+//    System.out.println(linkedList);
     linkedList.delete("3");
-    System.out.println(linkedList);
-    System.out.println(linkedList.includes("H"));
-    System.out.println(linkedList.includes("T"));
-    String str =linkedList.kthFromEnd(3);
-    System.out.println(str);
+//    System.out.println(linkedList);
+//    System.out.println(linkedList.includes("H"));
+//    System.out.println(linkedList.includes("T"));
+//    String str =linkedList.kthFromEnd(3);
+//    System.out.println(str);
 
     System.out.println("=================================================================================");
     System.out.println("=================================================================================");
@@ -47,9 +47,12 @@ public class App {
     list2.append("6");
     list2.append("7");
     list2.append("10");
-    System.out.println(list2);
+//    System.out.println(list2);
     LinkedList zip=new LinkedList();
 
-    System.out.println(zip.zipLists(list1,list2));
+//    System.out.println(zip.zipLists(list1,list2));
+
+    LinkedList linkedList1=new LinkedList();
+    System.out.println(linkedList1.LinkedListReverser(list1));
   }
 }
