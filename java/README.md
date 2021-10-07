@@ -8,7 +8,7 @@
 | array-insert-shift| [array-insert-shift](array-insert-shift/README.md)|
 | array-binary-search| [array-binary-search](array-binary-search/README.md)|
 | linked-list|[linked-list](linked-list/README.md)|
-|  Code Challenge 5| ------------------- |
+|  stack-and-queue| [stack and queue](stack-and-queue/README.md) |
 |  Code Challenge 6| ------------------- |
 |  Code Challenge 7| ------------------- |
 |  Code Challenge 8| ------------------- |
