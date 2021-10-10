@@ -178,6 +178,17 @@ class AppTest {
       }
     });
   }
+  //======================Code Challenge 11 =====================================
+  @Test
+  public void pseudoQueueSuccess() throws Exception {
+    PseudoQueue pseudoQueue = new PseudoQueue();
+    pseudoQueue.enqueue("A");
+    pseudoQueue.enqueue("B");
+    pseudoQueue.enqueue("C");
+    pseudoQueue.enqueue("D");
+    assertEquals("A", pseudoQueue.dequeue(), "Should return (Data of deleted node ->(A): FIFO)");
+  }
+
 }
 
 

@@ -14,9 +14,25 @@ Create A Queue and it's methods.
 4. peek method.
 ## Approach & Efficiency
 Stack approach .
--Big O(1) for Time For Every method.
--Big O(1) for Space For Every method.
+- Big O(1) for Time For Every method.
+- Big O(1) for Space For Every method.
 Queue approach .
--Big O(1) for Time For Every method.
--Big O(1) for Space For Every method.
-
+- Big O(1) for Time For Every method.
+- Big O(1) for Space For Every method.
+-------------------------------------------------
+# Pseudo Queues
+## Challenge
+Create A Queue using two Stacks.
+1. Queue interface with two methods
+- enqueue.
+- dequeue.
+## Approach & Efficiency
+Stack approach .
+enqueue method :
+- Big O(1) for Time For Every method.
+- Big O(1) for Space For Every method.
+- dequeue method :
+- Big O(n) for Time For Every method.
+- Big O(1) for Space For Every method.
+- ## WhiteBoard :
+- ![stack-queue-pseudo](stack-queue-pseudo.jpg)
