@@ -52,5 +52,19 @@ public class App {
       }catch (Exception exception){
         exception.printStackTrace();
       }
+
+      System.out.println("================================================================================");
+      System.out.println("================================================================================");
+
+      PseudoQueue pseudoQueue = new PseudoQueue();
+      pseudoQueue.enqueue("A");
+      pseudoQueue.enqueue("B");
+      pseudoQueue.enqueue("C");
+      pseudoQueue.enqueue("D");
+      pseudoQueue.enqueue("E");
+      System.out.println(pseudoQueue.stack1.peek());
+      System.out.println(pseudoQueue.dequeue());
+      System.out.println(pseudoQueue.stack1.peek());
+
     }
 }

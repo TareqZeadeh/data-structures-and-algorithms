@@ -38,7 +38,7 @@ public class Stack {
       System.out.println("The Stack Is Empty");
       throw new Exception("The Stack Is Empty");
     } else {
-      return top.getNext().getData();
+      return top.getData();
     }
   }
   public String peekNext()throws Exception{
