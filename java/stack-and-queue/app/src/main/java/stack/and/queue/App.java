@@ -3,6 +3,9 @@
  */
 package stack.and.queue;
 
+import stack.and.queue.Generics.Animal;
+import stack.and.queue.Generics.AnimalShelter;
+
 public class App {
 
 
@@ -31,6 +34,7 @@ public class App {
       }catch (Exception exception){
         exception.printStackTrace();
       }
+      System.out.println("===================================================================");
       System.out.println("===================================================================");
       Queue queue=new Queue();
       queue.enqueue("T");
@@ -65,6 +69,24 @@ public class App {
       System.out.println(pseudoQueue.stack1.peek());
       System.out.println(pseudoQueue.dequeue());
       System.out.println(pseudoQueue.stack1.peek());
+
+      System.out.println("================================================================================");
+      System.out.println("================================================================================");
+      AnimalShelter animalShelter = new AnimalShelter();
+      animalShelter.enqueue(new Animal("cat"));
+      animalShelter.enqueue(new Animal("cat"));
+      animalShelter.enqueue(new Animal("cat"));
+      animalShelter.enqueue(new Animal("cat"));
+      animalShelter.enqueue(new Animal("dog"));
+      animalShelter.enqueue(new Animal("dog"));
+      animalShelter.enqueue(new Animal("dog"));
+      animalShelter.enqueue(new Animal("dog"));
+      System.out.println(animalShelter.getDogs().getSize());
+      System.out.println(animalShelter.getCats().getSize());
+      System.out.println(animalShelter.dequeue("dog"));
+      System.out.println(animalShelter.dequeue("cat"));
+      System.out.println(animalShelter.getDogs().getSize());
+      System.out.println(animalShelter.getCats().getSize());
 
     }
 }
