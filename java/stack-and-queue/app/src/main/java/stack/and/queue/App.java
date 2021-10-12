@@ -5,88 +5,116 @@ package stack.and.queue;
 
 import stack.and.queue.Generics.Animal;
 import stack.and.queue.Generics.AnimalShelter;
+import stack.and.queue.Generics.Stack;
 
 public class App {
-
+//  public static boolean validBrackets(String string) throws Exception {
+//    Stack<Character> stack = new Stack<>();
+//    if (string.length() == 0) {
+//      System.out.println("Empty String");
+//      return false;
+//    }
+//    for (int i = 0; i < string.length(); i++) {
+//      if ((string.charAt(i) == '(') || (string.charAt(i) == '{') || (string.charAt(i) == '['))
+//        stack.push(string.charAt(i));
+//      else if ((string.charAt(i) == ')') && (stack.peek()=='('))
+//        stack.pop();
+//      else if ((string.charAt(i) == '}') && (stack.peek()=='{'))
+//        stack.pop();
+//      else if ((string.charAt(i) == ']') && (stack.peek()=='['))
+//        stack.pop();
+//
+//    }
+//    return stack.isEmpty();
+//  }
 
     public static void main(String[] args) throws Exception {
 
-      Stack stack=new Stack();
-      stack.push("T");
-      stack.push("A");
-      stack.push("R");
-      stack.push("I");
-      stack.push("Q");
+//      Stack stack=new Stack();
+//      stack.push("T");
+//      stack.push("A");
+//      stack.push("R");
+//      stack.push("I");
+//      stack.push("Q");
+//      try {
+//        System.out.println(stack.peek());
+//      }catch (Exception exception){
+//        exception.printStackTrace();
+//      }
+//
+//      System.out.println(stack.isEmpty());
+//      try {
+//        System.out.println(stack.pop());
+//      }catch (Exception exception){
+//        exception.printStackTrace();
+//      }
+//      try {
+//        System.out.println(stack.peek());
+//      }catch (Exception exception){
+//        exception.printStackTrace();
+//      }
+//      System.out.println("===================================================================");
+//      System.out.println("===================================================================");
+//      Queue queue=new Queue();
+//      queue.enqueue("T");
+//      queue.enqueue("A");
+//      queue.enqueue("R");
+//      queue.enqueue("I");
+//      queue.enqueue("Q");
+//      try {
+//        System.out.println(queue.peek());
+//      }catch (Exception exception){
+//        exception.printStackTrace();
+//      }System.out.println(queue.isEmpty());
+//      try {
+//        System.out.println(queue.dequeue());
+//      }catch (Exception exception){
+//        exception.printStackTrace();
+//      }try {
+//        System.out.println(queue.peek());
+//      }catch (Exception exception){
+//        exception.printStackTrace();
+//      }
+//
+//      System.out.println("================================================================================");
+//      System.out.println("================================================================================");
+//
+//      PseudoQueue pseudoQueue = new PseudoQueue();
+//      pseudoQueue.enqueue("A");
+//      pseudoQueue.enqueue("B");
+//      pseudoQueue.enqueue("C");
+//      pseudoQueue.enqueue("D");
+//      pseudoQueue.enqueue("E");
+//      System.out.println(pseudoQueue.stack1.peek());
+//      System.out.println(pseudoQueue.dequeue());
+//      System.out.println(pseudoQueue.stack1.peek());
+//
+//      System.out.println("================================================================================");
+//      System.out.println("================================================================================");
+//      AnimalShelter animalShelter = new AnimalShelter();
+//      animalShelter.enqueue(new Animal("cat"));
+//      animalShelter.enqueue(new Animal("cat"));
+//      animalShelter.enqueue(new Animal("cat"));
+//      animalShelter.enqueue(new Animal("cat"));
+//      animalShelter.enqueue(new Animal("dog"));
+//      animalShelter.enqueue(new Animal("dog"));
+//      animalShelter.enqueue(new Animal("dog"));
+//      animalShelter.enqueue(new Animal("dog"));
+//      System.out.println(animalShelter.getDogs().getSize());
+//      System.out.println(animalShelter.getCats().getSize());
+//      System.out.println(animalShelter.dequeue("dog"));
+//      System.out.println(animalShelter.dequeue("cat"));
+//      System.out.println(animalShelter.getDogs().getSize());
+//      System.out.println(animalShelter.getCats().getSize());
+//      System.out.println("================================================================================");
+//      System.out.println("================================================================================");
+      ValidateBrackets validateBrackets = new ValidateBrackets();
       try {
-        System.out.println(stack.peek());
-      }catch (Exception exception){
-        exception.printStackTrace();
-      }
+        System.out.println(validateBrackets.validBrackets("()[[Extra Characters]]"));
+      }catch (Exception exception){exception.printStackTrace();}
 
-      System.out.println(stack.isEmpty());
-      try {
-        System.out.println(stack.pop());
-      }catch (Exception exception){
-        exception.printStackTrace();
-      }
-      try {
-        System.out.println(stack.peek());
-      }catch (Exception exception){
-        exception.printStackTrace();
-      }
-      System.out.println("===================================================================");
-      System.out.println("===================================================================");
-      Queue queue=new Queue();
-      queue.enqueue("T");
-      queue.enqueue("A");
-      queue.enqueue("R");
-      queue.enqueue("I");
-      queue.enqueue("Q");
-      try {
-        System.out.println(queue.peek());
-      }catch (Exception exception){
-        exception.printStackTrace();
-      }System.out.println(queue.isEmpty());
-      try {
-        System.out.println(queue.dequeue());
-      }catch (Exception exception){
-        exception.printStackTrace();
-      }try {
-        System.out.println(queue.peek());
-      }catch (Exception exception){
-        exception.printStackTrace();
-      }
+//      System.out.println(validBrackets("(){}"));
 
-      System.out.println("================================================================================");
-      System.out.println("================================================================================");
-
-      PseudoQueue pseudoQueue = new PseudoQueue();
-      pseudoQueue.enqueue("A");
-      pseudoQueue.enqueue("B");
-      pseudoQueue.enqueue("C");
-      pseudoQueue.enqueue("D");
-      pseudoQueue.enqueue("E");
-      System.out.println(pseudoQueue.stack1.peek());
-      System.out.println(pseudoQueue.dequeue());
-      System.out.println(pseudoQueue.stack1.peek());
-
-      System.out.println("================================================================================");
-      System.out.println("================================================================================");
-      AnimalShelter animalShelter = new AnimalShelter();
-      animalShelter.enqueue(new Animal("cat"));
-      animalShelter.enqueue(new Animal("cat"));
-      animalShelter.enqueue(new Animal("cat"));
-      animalShelter.enqueue(new Animal("cat"));
-      animalShelter.enqueue(new Animal("dog"));
-      animalShelter.enqueue(new Animal("dog"));
-      animalShelter.enqueue(new Animal("dog"));
-      animalShelter.enqueue(new Animal("dog"));
-      System.out.println(animalShelter.getDogs().getSize());
-      System.out.println(animalShelter.getCats().getSize());
-      System.out.println(animalShelter.dequeue("dog"));
-      System.out.println(animalShelter.dequeue("cat"));
-      System.out.println(animalShelter.getDogs().getSize());
-      System.out.println(animalShelter.getCats().getSize());
 
     }
 }
