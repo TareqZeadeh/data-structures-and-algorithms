@@ -53,3 +53,14 @@ enqueue method :
 - Big O(1) for Space .
 - ## WhiteBoard :
 - ![stack-queue-animal-shelter](stack-queue-animal-shelter.jpg)
+- - ------------------------------------------------------------------------
+- # stack-queue-brackets
+## Challenge
+- Create a method representing whether the brackets in a string are balanced or not.
+## Approach & Efficiency
+Stack approach .
+- Big O(n) for Time .
+- Big O(1) for Space .
+
+- ## WhiteBoard :
+- ![stack-queue-brackets](stack-queue-brackets.jpg)

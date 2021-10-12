@@ -6,7 +6,9 @@ package stack.and.queue;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
+//import static org.junit.jupiter.api.AssertFalse.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AppTest {
@@ -189,6 +191,13 @@ class AppTest {
     assertEquals("A", pseudoQueue.dequeue(), "Should return (Data of deleted node ->(A): FIFO)");
   }
 
+
+  //=======================Code Challenge 13=======================================
+  @Test
+  public void bracketsValidator(){
+    ValidateBrackets validateBrackets= new ValidateBrackets();
+    assertFalse(validateBrackets.validBrackets("{(})"), "Method should return true if brackets are balanced");
+  }
 }
 
 
