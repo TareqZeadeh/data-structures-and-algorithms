@@ -3,10 +3,11 @@ package stack.and.queue;
 public class Queue {
   private Node front;
   private Node rear;
-
+  int size;
   public Queue() {
     this.front = null;
     this.rear = null;
+    size = 0;
   }
   public boolean isEmpty(){
     return front == null;
@@ -21,6 +22,7 @@ public class Queue {
       rear.setNext(newNode);
       rear = newNode;
     }
+    size++;
   }
   public String dequeue()throws Exception{
     if(isEmpty()){
@@ -29,6 +31,7 @@ public class Queue {
     }else{
       String data = front.getData();
       front = front.getNext();
+      size--;
       return data;
     }
   }
@@ -47,5 +50,25 @@ public class Queue {
     }else{
       return front.getNext().getData();
     }
+  }
+
+  public Node getFront() {
+    return front;
+  }
+
+  public void setFront(Node front) {
+    this.front = front;
+  }
+
+  public Node getRear() {
+    return rear;
+  }
+
+  public void setRear(Node rear) {
+    this.rear = rear;
+  }
+
+  public int getSize() {
+    return size;
   }
 }

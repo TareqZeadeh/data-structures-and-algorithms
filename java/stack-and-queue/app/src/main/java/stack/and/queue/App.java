@@ -108,13 +108,23 @@ public class App {
 //      System.out.println(animalShelter.getCats().getSize());
 //      System.out.println("================================================================================");
 //      System.out.println("================================================================================");
-      ValidateBrackets validateBrackets = new ValidateBrackets();
-      try {
-        System.out.println(validateBrackets.validBrackets("()[[Extra Characters]]"));
-      }catch (Exception exception){exception.printStackTrace();}
+//      ValidateBrackets validateBrackets = new ValidateBrackets();
+//      try {
+//        System.out.println(validateBrackets.validBrackets("()[[Extra Characters]]"));
+//      }catch (Exception exception){exception.printStackTrace();}
 
 //      System.out.println(validBrackets("(){}"));
 
+      System.out.println("===================================================================");
+      System.out.println("===================================================================");
+      DockQueue<String> dockQueue = new DockQueue<>();
+      dockQueue.enqueue("A");
+      dockQueue.enqueue("B");
+      dockQueue.enqueue("C");
+      dockQueue.enqueue("D");
+      dockQueue.enqueue("E");
+      System.out.println(dockQueue);
+      System.out.printf( "only %s is left", dockQueue.duckDuckGoose(3));
 
     }
 }
