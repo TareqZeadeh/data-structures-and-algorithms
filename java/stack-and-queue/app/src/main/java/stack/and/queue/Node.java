@@ -9,6 +9,7 @@ public class Node {
     this.next=null;
   }
 
+
   public String getData() {
     return data;
   }
