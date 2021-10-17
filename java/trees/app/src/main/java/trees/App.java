@@ -8,18 +8,30 @@ public class App {
         return "Hello World!";
     }
 
-    public static void main(String[] args) {
-      BinarySearchTree<String> binarySearchTree = new BinarySearchTree<>();
-      binarySearchTree.add("30");
-      binarySearchTree.add("52");
-      binarySearchTree.add("63");
-      binarySearchTree.add("47");
-      binarySearchTree.add("6");
-      binarySearchTree.add("92");
-      binarySearchTree.add("3");
-      System.out.println(binarySearchTree.contains("7"));
-      System.out.println(binarySearchTree.contains("52"));
-      System.out.println(binarySearchTree.contains("30"));
+    public static void main(String[] args) throws Exception {
+      BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
+      binarySearchTree.add(30);
+      binarySearchTree.add(52);
+      binarySearchTree.add(63);
+      binarySearchTree.add(47);
+      binarySearchTree.add(6);
+      binarySearchTree.add(92);
+      binarySearchTree.add(3);
+      System.out.println(binarySearchTree.contains(7));
+      System.out.println(binarySearchTree.contains(52));
+      System.out.println(binarySearchTree.contains(30));
+      System.out.println(binarySearchTree.findMax());
+      //------------------------------------------------------
+      BinarySearchTree<Integer> binarySearchTree1=new BinarySearchTree<>();
+      binarySearchTree1.add(5);
+      binarySearchTree1.add(4);
+      binarySearchTree1.add(2);
+      binarySearchTree1.add(1);
+      binarySearchTree1.add(6);
+      binarySearchTree1.add(7);
+      binarySearchTree1.add(8);
+      System.out.println(binarySearchTree1.findMax());
+
 
     }
 }

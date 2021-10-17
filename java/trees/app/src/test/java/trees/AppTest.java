@@ -27,4 +27,19 @@ class AppTest {
       assertTrue(binarySearchTree.contains("50"),"should return true because the right side of the tree root value is (50)");
       assertTrue(binarySearchTree.contains("30"),"should return true because the left side of the tree root value is (30)");
     }
+
+    //=============================================================================
+  @Test
+  void findMaxTest (){
+    BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
+    binarySearchTree.add(40);
+    binarySearchTree.add(50);
+    binarySearchTree.add(30);
+    try {
+      assertEquals(50,binarySearchTree.findMax(),"Should return the maximum value in the tree which is 50 ");
+    } catch (Exception e) {
+      assertEquals("The tree is empty",e.getMessage());
+    }
+
+  }
 }

@@ -48,6 +48,19 @@ public class BinarySearchTree<T extends Comparable<T>> {
     else {return contains(data,root.getLeftNode());}
 
   }
+
+
+  public T findMax() throws Exception{
+    if(isEmpty()){throw new Exception("The tree is empty");}
+    else {
+      return findMax(root);
+    }
+  }
+  private T findMax(BinaryNode<T> root){
+    if (root.getRightNode() != null){
+     return findMax(root.getRightNode());
+    }else return root.getData();
+  }
 }
 
 
