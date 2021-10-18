@@ -1,5 +1,11 @@
 package trees;
 
+import trees.Queue.Node;
+import trees.Queue.Queue;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class BinarySearchTree<T extends Comparable<T>> {
   private BinaryNode<T> root;
 
@@ -49,7 +55,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
 
   }
 
-
+//==============================code 16 ====================================
   public T findMax() throws Exception{
     if(isEmpty()){throw new Exception("The tree is empty");}
     else {
@@ -61,6 +67,33 @@ public class BinarySearchTree<T extends Comparable<T>> {
      return findMax(root.getRightNode());
     }else return root.getData();
   }
+
+  //==============================code 17 ====================================
+
+  public List<T> breadthFirst(BinarySearchTree<T> tree){
+    if(root==null) {return null;}
+    Queue<BinaryNode<T>>queue = new Queue<>();
+    List<T> list = new ArrayList<>();
+    queue.enqueue(root);
+    list.add((T) root.getData());
+    System.out.print("[");
+    while (!queue.isEmpty()){
+      try {
+        BinaryNode<T> node = queue.dequeue();
+        if(node.getLeftNode()!=null){
+          queue.enqueue(node.getLeftNode());
+          list.add((T) node.getLeftNode().getData());
+        }if(node.getRightNode()!=null){
+          queue.enqueue(node.getRightNode());
+          list.add((T) node.getRightNode().getData());
+        }
+        System.out.print(node.getData() + ", ");
+      }catch (Exception e){e.printStackTrace();}
+    }
+    System.out.print("]");
+    return list;
+  }
+
 }
 
 
