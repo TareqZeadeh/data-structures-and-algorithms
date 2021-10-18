@@ -26,3 +26,17 @@ Bog O(1) for space.
 - findMax method: will find the maximum value in the tree and return it .
 ## WightBoard :
 ![tree-max](tree-max.jpg)
+========================== challenge 17 =======================
+# Tree-max
+## Challenge
+Write a function that return a list of all values in a tree, in the order they were encountered.
+
+## Approach & Efficiency
+tree Approach
+Bog O(n) for time.
+Bog O(2*n) for space.
+
+## API
+- breadthFirst method: will return a list of all values in a tree .
+## WightBoard :
+![tree-breadth-first](tree-breadth-first.jpg)

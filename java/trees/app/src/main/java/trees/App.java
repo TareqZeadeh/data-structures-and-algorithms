@@ -31,6 +31,7 @@ public class App {
       binarySearchTree1.add(7);
       binarySearchTree1.add(8);
       System.out.println(binarySearchTree1.findMax());
+      System.out.println(binarySearchTree1.breadthFirst(binarySearchTree1));
 
 
     }
