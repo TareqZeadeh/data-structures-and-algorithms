@@ -32,6 +32,25 @@ public class App {
       binarySearchTree1.add(8);
       System.out.println(binarySearchTree1.findMax());
       System.out.println(binarySearchTree1.breadthFirst(binarySearchTree1));
+      System.out.println("==========================================================");
+      System.out.println("==========================================================");
+      BinarySearchTree<Integer> b1 = new BinarySearchTree<>();
+      b1.add(7);
+      b1.add(6);
+      b1.add(9);
+      b1.add(4);
+      b1.add(6);
+      b1.add(8);
+      b1.add(10);
+      BinarySearchTree<Integer> b2 = new BinarySearchTree<>();
+      b2.add(7);
+      b2.add(6);
+      b2.add(9);
+      b2.add(4);
+      b2.add(6);
+      b2.add(8);
+      b2.add(10);
+      System.out.println(b1.ComparingTwoDirectories(b1,b2));
 
 
     }
