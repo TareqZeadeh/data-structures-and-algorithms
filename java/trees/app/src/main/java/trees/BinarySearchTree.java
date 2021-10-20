@@ -8,6 +8,7 @@ import java.util.List;
 
 public class BinarySearchTree<T extends Comparable<T>> {
   private BinaryNode<T> root;
+  private int size;
 
   public Boolean isEmpty() {
     return root == null;
@@ -37,6 +38,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
         addHelper(data, root.getLeftNode());
       }
     }
+    size++;
   }
 
   public Boolean contains(T data){
@@ -92,6 +94,46 @@ public class BinarySearchTree<T extends Comparable<T>> {
     }
     System.out.print("]");
     return list;
+  }
+  //===============================================================================
+  private int breadthFirstForCompare(BinarySearchTree<T> tree){
+    int counter = 0;
+    Queue<BinaryNode<T>>queue = new Queue<>();
+    queue.enqueue(root);
+    while (!queue.isEmpty()){
+      try {
+        BinaryNode<T> node = queue.dequeue();
+        if(node.getLeftNode()==null && node.getRightNode()==null)
+          counter++;
+        if(node.getLeftNode()!=null){
+          queue.enqueue(node.getLeftNode());
+        }if(node.getRightNode()!=null){
+          queue.enqueue(node.getRightNode());
+        }
+
+      }catch (Exception e){e.printStackTrace();}
+    }
+    return counter;
+  }
+  public Boolean ComparingTwoDirectories(BinarySearchTree<T> tree1 ,BinarySearchTree<T> tree2 ){
+    int counter1=0;
+    int counter2=0;
+    if(tree1.root==null && tree2.root!=null) {
+      System.out.println("First Tree is Empty");
+      return false;}
+    else if(tree1.root!=null && tree2.root==null) {
+      System.out.println("Second Tree is Empty");
+      return false;}
+    else if(tree1.root==null && tree2.root==null) {
+      System.out.println("Both Of Trees is Empty");
+      return false;}
+    else {
+      counter1 = tree1.breadthFirstForCompare(tree1);
+      counter2 = tree2.breadthFirstForCompare(tree2);
+      if(counter1 == counter2)
+        return true;
+      else return false;
+    }
   }
 
 }

@@ -27,7 +27,7 @@ Bog O(1) for space.
 ## WightBoard :
 ![tree-max](tree-max.jpg)
 ========================== challenge 17 =======================
-# Tree-max
+# Tree-breadth-first
 ## Challenge
 Write a function that return a list of all values in a tree, in the order they were encountered.
 
