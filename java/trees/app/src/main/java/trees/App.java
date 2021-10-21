@@ -3,6 +3,11 @@
  */
 package trees;
 
+import trees.KAryTree.KAryTree;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
@@ -51,7 +56,23 @@ public class App {
       b2.add(8);
       b2.add(10);
       System.out.println(b1.ComparingTwoDirectories(b1,b2));
-
-
+      System.out.println("==========================================================");
+      System.out.println("==========================================================");
+      List<Integer> list = new ArrayList<>();
+      list.add(1);
+      list.add(2);
+      list.add(3);
+      list.add(4);
+      list.add(5);
+      list.add(6);
+      list.add(7);
+      list.add(8);
+      list.add(9);
+      list.add(30);
+      KAryTree<Integer> kAryTree = new KAryTree<>(list, 3);
+      kAryTree.postorder(kAryTree.getRoot());
+      System.out.println();
+      kAryTree.treeFizzBuzz();
+      kAryTree.postorder(kAryTree.getRoot());
     }
 }

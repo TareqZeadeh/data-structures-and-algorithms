@@ -40,3 +40,20 @@ Bog O(2*n) for space.
 - breadthFirst method: will return a list of all values in a tree .
 ## WightBoard :
 ![tree-breadth-first](tree-breadth-first.jpg)
+========================== challenge 18 =======================
+# FizzBuzz on a k-ary tree
+## Challenge
+-A node can have k number of children , Determined wither or not the value of each node is divisible by 3, 5 or both , Create a new tree with the same structure as the original , but the values are modified.
+
+## Approach & Efficiency
+tree Approach
+Bog O(n) for time.
+Bog O(n) for space.
+
+## API
+- treeFizzBuzz method:
+-  If the value is divisible by 3, replace the value with “Fizz”
+-  If the value is divisible by 5, replace the value with “Buzz”
+-  If the value is divisible by 3 and 5, replace the value with “FizzBuzz” .
+## WightBoard :
+![tree-fizz-buzz](tree-fizz-buzz.jpg)
