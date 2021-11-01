@@ -17,10 +17,22 @@ class AppTest {
 
       assertEquals("[]",Arrays.toString(app.sort(arr)),"Should return empty array");
     }
-  @Test void notEmptyArrayTest() {
+    @Test void notEmptyArrayTest() {
     int arr[] = {5,6,1,2,4,9,7,8};
     App app = new App();
 
     assertEquals("[1, 2, 4, 5, 6, 7, 8, 9]",Arrays.toString(app.sort(arr)),"Should return the same array but sorted");
+  }
+    @Test void emptyArrayMergeTest() {
+    int arr[] = {};
+    App app = new App();
+    App.mergeSort(arr);
+    assertEquals("[]",Arrays.toString(arr),"Should return empty array");
+  }
+  @Test void notEmptyArrayMergeTest() {
+    int arr[] = {5,6,1,2,4,9,7,8};
+    App app = new App();
+
+    assertArrayEquals(arr,new int[]{1,2,4,5,6,7,8,9},"Should return the same array but sorted");
   }
 }
