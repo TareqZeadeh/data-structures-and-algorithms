@@ -6,9 +6,7 @@ package Insertion.Sort;
 import java.util.Arrays;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+    // Insertion Sort=======================================================
     public static int[] sort(int[] arr){
       for (int i=1; i<arr.length; i++){
         int temp =arr[i];
@@ -21,6 +19,7 @@ public class App {
       }
       return arr;
     }
+  // Merge Sort=======================================================
 
     public static void mergeSort (int[] arr){
       int inputLength = arr.length;
@@ -58,15 +57,50 @@ public class App {
       }
 
     }
-    public static void main(String[] args) {
+  // Quick Sort=======================================================
+
+  private static void swap(int[] arr,int i,int j){
+    int temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+  }
+  private static int partition (int[] arr, int low, int high){
+    int pivot = arr[high];
+    int i = low-1;
+    for(int j=low; j<high;j++){
+      if(arr[j]<pivot){
+        i++;
+        swap(arr,i,j);
+      }
+    }
+    swap(arr,(i+1),high);
+    return (i+1);
+  }
+  public static void quickSort (int[] arr, int low, int high){
+      if(low<high){
+        int pi=partition(arr,low,high);
+        quickSort(arr,low,(pi-1));
+        quickSort(arr,(pi+1),high);
+      }
+  }
+
+  public static void main(String[] args) {
       int arr[] = {8,4,23,42,16,15};
+      int[] arr2={};
+    System.out.println(Arrays.toString(arr));
 //      System.out.println(Arrays.toString(sort(arr)));
-       mergeSort(arr);
-      System.out.print("[");
-       for(int i=0; i<arr.length;i++){
-         if(i==0){System.out.print(arr[i]);}
-         else {System.out.print(", "+arr[i]);}
-       }
-      System.out.print("]");
+
+//       mergeSort(arr);
+
+
+    quickSort(arr,0,arr.length-1);
+
+    System.out.print("[");
+    for(int i=0; i<arr.length;i++){
+      if(i==0){System.out.print(arr[i]);}
+      else {System.out.print(", "+arr[i]);}
+    }
+    System.out.print("]");
+
     }
 }
