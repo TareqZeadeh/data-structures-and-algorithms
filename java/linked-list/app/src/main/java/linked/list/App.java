@@ -8,6 +8,8 @@ public class App {
     return "Hello World!";
   }
 
+
+
   public static void main(String[] args) {
 //        System.out.println(new App().getGreeting());
 
@@ -47,12 +49,28 @@ public class App {
     list2.append("6");
     list2.append("7");
     list2.append("10");
-//    System.out.println(list2);
+//    System.out.println("list 2 =>>>"+list2);
     LinkedList zip=new LinkedList();
 
 //    System.out.println(zip.zipLists(list1,list2));
 
     LinkedList linkedList1=new LinkedList();
     System.out.println(linkedList1.LinkedListReverser(list1));
+
+    System.out.println(list1);
+    list1.reverser();
+    System.out.println(list1);
+    System.out.println("=================================================================================");
+    System.out.println("=================================================================================");
+    LinkedList palindromeList = new LinkedList();
+    palindromeList.append("1");
+    palindromeList.append("2");
+    palindromeList.append("3");
+    palindromeList.append("4");
+    palindromeList.append("3");
+    palindromeList.append("2");
+    palindromeList.append("1");
+//    palindromeList.append("4");
+    System.out.println(palindromeList.isPalindrome());
   }
 }

@@ -216,21 +216,71 @@ public class LinkedList {
   //--------------------------Linked List Reverser------------------------------------
 
 
+  public static LinkedList LinkedListReverser(LinkedList list) {
+    Node current = list.head;
+    LinkedList list1 = new LinkedList();
+    if (list.size() == 0) {
+      System.out.println("Empty linked list passed to the method , will return empty linked list ");
+    } else {
+      while (current != null) {
+        list1.insert(current.getData());
+        current = current.getNext();
+      }
+    }
 
-  public static LinkedList LinkedListReverser(LinkedList list){
-  Node current =list.head;
-  LinkedList list1 = new LinkedList();
-  if(list.size()==0){
-    System.out.println("Empty linked list passed to the method , will return empty linked list ");
-  }else {
-    while (current!=null){
-    list1.insert(current.getData());
-    current=current.getNext();
-  }}
+    return list1;
+  }
 
-  return list1;
+  //=========================Is Palindrome=================================
+  public boolean isPalindrome() {
+    Node fast = head;
+    Node slow = head;
+    while (fast != null && fast.getNext() != null) {
+      fast = fast.getNext().getNext();
+      slow = slow.getNext();
+    }
+    slow = reversed(slow);
+    fast = head;
+    while (slow != null) {
+      if (slow.getData() != fast.getData()) {
+        return false;
+      }
+      slow = slow.getNext();
+      fast = fast.getNext();
+    }
+    return true;
+  }
+
+  private Node reversed(Node head){
+    Node prev = null;
+    Node current = head;
+    Node next = null;
+    while (current != null){
+      next = current.getNext();
+      current.setNext(prev);
+      prev = current;
+      current = next;
+    }
+    return prev;
+  }
+
+  public void reverser(){
+    Node prev = null;
+    Node current = head;
+    Node next = null;
+    while (current != null){
+      next = current.getNext();
+      current.setNext(prev);
+      prev = current;
+      current = next;
+    }
+    head = prev;
   }
 }
+
+//===============================
+
+
 //while (current1 != null) {
 //  length1++;
 //  current1 = current1.getNext();
