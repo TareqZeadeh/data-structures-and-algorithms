@@ -67,4 +67,16 @@ class AppTest {
     }
   }
 
+  //=================================challenge 31================================
+  @Test
+  void notEmptyString (){
+    String str = "hi hi all";
+    assertEquals("hi",App.repeatedWord(str));
+  }
+  @Test
+  void emptyString (){
+    String str = "";
+    assertNull(App.repeatedWord(str));
+  }
+
 }
