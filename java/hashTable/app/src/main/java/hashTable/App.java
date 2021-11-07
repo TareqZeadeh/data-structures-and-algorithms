@@ -3,34 +3,62 @@
  */
 package hashTable;
 
+import java.util.*;
+import java.util.Map.Entry;
+
 public class App {
 
+  public static String repeatedWord(String string) {
+    if(string == ""){
+      System.out.println("The input is Empty String");
+      return null;
+    }
+    String str = string.toLowerCase(Locale.ROOT);
+    String strArray[] = str.split("[\\p{Punct}\\s]+");
+    Map<String, Integer> strMap = new LinkedHashMap<>();
+    for (int i = 0; i < strArray.length; i++) {
+      if (strMap.containsKey(strArray[i])) {
+        strMap.put(strArray[i], strMap.get(strArray[i]) + 1);
+      } else {
+        strMap.put(strArray[i], 1);
+      }
+    }
+    for (Entry<String, Integer> entry : strMap.entrySet()) {
+      if (entry.getValue() >= 2) {
+        return entry.getKey();
+      }
+    }
+    return null;
+  }
 
-    public static void main(String[] args) {
-      HashTable<String,Integer> hashTable = new HashTable<>();
-      hashTable.add("Tareq",50);
-      hashTable.add("Mohammed",60);
-      hashTable.add("Hatem",40);
+  public static void main(String[] args) {
+    HashTable<String, Integer> hashTable = new HashTable<>();
+    hashTable.add("Tareq", 50);
+    hashTable.add("Mohammed", 60);
+    hashTable.add("Hatem", 40);
 //      hashTable.add("Oside",55);
 //      hashTable.add("Rahaf",45);
 //      hashTable.add("Doaa",65);
 //      hashTable.add("Anas",46);
-      hashTable.add("Teheran",46);
-      hashTable.add("Siblings",47);
-      System.out.println(hashTable);
-      System.out.println("++++==============================+++++");
-      System.out.println("++++==============================+++++");
-      System.out.println(hashTable.get("Tareq"));
-      System.out.println(hashTable.get("Mohammed"));
-      System.out.println(hashTable.get("Omar"));
-      System.out.println("++++==============================+++++");
-      System.out.println("++++==============================+++++");
-      System.out.println(hashTable.contain("Anas"));
-      System.out.println(hashTable.contain("Omar"));
-      System.out.println("++++==============================+++++");
-      System.out.println("++++==============================+++++");
-      System.out.println(hashTable.getBucketIndex("Tareq"));
-      System.out.println(hashTable.getBucketIndex("Teheran"));
-      System.out.println(hashTable.getBucketIndex("Siblings"));
-    }
+    hashTable.add("Teheran", 46);
+    hashTable.add("Siblings", 47);
+    System.out.println(hashTable);
+    System.out.println("++++==============================+++++");
+    System.out.println("++++==============================+++++");
+    System.out.println(hashTable.get("Tareq"));
+    System.out.println(hashTable.get("Mohammed"));
+    System.out.println(hashTable.get("Omar"));
+    System.out.println("++++==============================+++++");
+    System.out.println("++++==============================+++++");
+    System.out.println(hashTable.contain("Anas"));
+    System.out.println(hashTable.contain("Omar"));
+    System.out.println("++++==============================+++++");
+    System.out.println("++++==============================+++++");
+    System.out.println(hashTable.getBucketIndex("Tareq"));
+    System.out.println(hashTable.getBucketIndex("Teheran"));
+    System.out.println(hashTable.getBucketIndex("Siblings"));
+
+    String str = "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only...";
+    System.out.println(repeatedWord(str));
+  }
 }
