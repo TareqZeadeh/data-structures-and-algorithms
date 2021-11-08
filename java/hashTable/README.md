@@ -22,3 +22,15 @@ Big O for Space : O(n)
 
 ## Whiteboard Process
 ![hashmap-repeated-word](hashmap-repeated-word.jpg)
+## ===================================================================================
+## ===================================================================================
+## Challenge 32
+Write a function called tree_intersection that takes two binary trees as parameters and return a set of values found in both trees.
+
+## Approach & Efficiency
+Big O for Time : O(n)
+Big O for Space : O(n)
+
+## Whiteboard Process
+![tree_intersection](tree_intersection.jpg)
+
