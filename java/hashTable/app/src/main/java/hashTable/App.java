@@ -30,6 +30,24 @@ public class App {
     }
     return null;
   }
+  //=================================challenge 32================================
+
+  public static List<Integer> treeIntersection(BinaryTree<Integer> tree1,BinaryTree<Integer> tree2){
+    if(tree1.root == null && tree2.root == null){return new ArrayList<>();}
+    else if(tree1.root != null && tree2.root == null){return new ArrayList<>();}
+    else if(tree1.root == null && tree2.root != null){return new ArrayList<>();}
+    HashTable<Integer,Integer> table = new HashTable<>();
+    List<Integer> common = new ArrayList<>();
+    for (int item : tree1.preOrder(tree1.root)){
+      table.add(item,0);
+    }
+    List<Integer> list = tree2.inOrder(tree2.root);
+    for(int item : list){
+      if(table.contain(item)){common.add(list.get(list.indexOf(item)));}
+      else{table.add(list.get(list.indexOf(item)),0);}
+    }
+    return common;
+  }
 
   public static void main(String[] args) {
     HashTable<String, Integer> hashTable = new HashTable<>();
@@ -60,5 +78,28 @@ public class App {
 
     String str = "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only...";
     System.out.println(repeatedWord(str));
+
+
+
+//=================================challenge 32================================
+
+    BinaryTree<Integer> tree1 = new BinaryTree<>();
+    BinaryTree<Integer> tree2 = new BinaryTree<>();
+
+    tree1.root = new BinaryNode<>(10);
+    tree1.root.left = new BinaryNode<>(20);
+    tree1.root.right = new BinaryNode<>(25);
+    tree1.root.right.right = new BinaryNode<>(40);
+    tree1.root.right.left = new BinaryNode<>(50);
+
+
+    tree2.root = new BinaryNode<Integer>(15);
+    tree2.root.left = new BinaryNode<>(20);
+    tree2.root.right = new BinaryNode<>(25);
+    tree2.root.right.right = new BinaryNode<>(40);
+    tree2.root.right.left = new BinaryNode<>(55);
+
+
+    System.out.println(treeIntersection(tree1,tree2));
   }
 }

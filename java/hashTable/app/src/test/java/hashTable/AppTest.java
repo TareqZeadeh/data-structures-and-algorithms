@@ -4,6 +4,11 @@
 package hashTable;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
@@ -79,4 +84,48 @@ class AppTest {
     assertNull(App.repeatedWord(str));
   }
 
+  //=================================challenge 32================================
+  @Test
+  void onTreeIsEmpty(){
+    BinaryTree<Integer> tree1 = new BinaryTree<>();
+    BinaryTree<Integer> tree2 = new BinaryTree<>();
+    tree1.root = new BinaryNode<>(10);
+    tree1.root.left = new BinaryNode<>(20);
+    tree1.root.right = new BinaryNode<>(25);
+    tree1.root.right.right = new BinaryNode<>(40);
+    tree1.root.right.left = new BinaryNode<>(50);
+    List<Integer> list = new ArrayList<>();
+    assertEquals(list,App.treeIntersection(tree1,tree2));
+  }
+
+  @Test
+  void twoTreesIsEmpty(){
+    BinaryTree<Integer> tree1 = new BinaryTree<>();
+    BinaryTree<Integer> tree2 = new BinaryTree<>();
+    List<Integer> list = new ArrayList<>();
+    assertEquals(list,App.treeIntersection(tree1,tree2));
+  }
+  @Test
+  void twoTreesIsNotEmpty(){
+    BinaryTree<Integer> tree1 = new BinaryTree<>();
+    BinaryTree<Integer> tree2 = new BinaryTree<>();
+
+    tree1.root = new BinaryNode<>(10);
+    tree1.root.left = new BinaryNode<>(20);
+    tree1.root.right = new BinaryNode<>(25);
+    tree1.root.right.right = new BinaryNode<>(40);
+    tree1.root.right.left = new BinaryNode<>(50);
+
+
+    tree2.root = new BinaryNode<Integer>(15);
+    tree2.root.left = new BinaryNode<>(20);
+    tree2.root.right = new BinaryNode<>(25);
+    tree2.root.right.right = new BinaryNode<>(40);
+    tree2.root.right.left = new BinaryNode<>(55);
+    List<Integer> list = new ArrayList<>();
+    list.add(20);
+    list.add(25);
+    list.add(40);
+    assertEquals(list, App.treeIntersection(tree1,tree2));
+  }
 }
