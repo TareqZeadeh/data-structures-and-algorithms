@@ -49,6 +49,25 @@ public class App {
     return common;
   }
 
+  //=================================challenge 33================================
+
+  public static List<List<String>> leftJoin(HashTable<String , String> table1 , HashTable<String , String> table2){
+    List<List<String>> dictionary = new ArrayList<>();
+    for (int i = 0; i < table1.getBucketSize(); i++) {
+      List<String> data = new ArrayList<>();
+      if(table1.getBucketArray().get(i) != null ){
+        data.add(table1.getBucketArray().get(i).key);
+        data.add(table1.getBucketArray().get(i).value);
+        data.add(table2.get(data.get(0)));
+        dictionary.add(data);
+
+      }
+
+    }
+    return dictionary;
+  }
+
+
   public static void main(String[] args) {
     HashTable<String, Integer> hashTable = new HashTable<>();
     hashTable.add("Tareq", 50);
@@ -101,5 +120,28 @@ public class App {
 
 
     System.out.println(treeIntersection(tree1,tree2));
+
+
+    //=================================challenge 33================================
+
+    HashTable<String,String> table1 = new HashTable<>();
+    HashTable<String,String> table2 = new HashTable<>();
+
+    table1.add("outift", "garb");
+    table1.add("fond", "enamored");
+    table1.add("wrath", "anger");
+    table1.add("diligent", "employed");
+    table1.add("guide", "usher");
+
+    table1.add("b", "2");
+    table1.add("c", "3");
+
+    table2.add("fond", "averse");
+    table2.add("wrath", "delight");
+    table2.add("diligent", "idle");
+    table2.add("guide", "follow");
+    table2.add("flow", "jam");
+    table2.add("flow2", "jam");
+    System.out.println(leftJoin(table1,table2));
   }
 }

@@ -128,4 +128,23 @@ class AppTest {
     list.add(40);
     assertEquals(list, App.treeIntersection(tree1,tree2));
   }
+
+  //=================================challenge 33================================
+  @Test
+  void twoTablesIsNotEmpty(){
+    HashTable<String,String> table1 = new HashTable<>();
+    HashTable<String,String> table2 = new HashTable<>();
+    table1.add("fond", "enamored");
+    table2.add("fond", "averse");
+    int lengthOfFirstList = App.leftJoin(table1 , table2).get(0).size();
+    assertEquals(3,lengthOfFirstList);
+  }
+
+  @Test
+  void onTableIsEmpty(){
+    HashTable<String,String> table1 = new HashTable<>();
+    HashTable<String,String> table2 = new HashTable<>();
+    table1.add("fond", "enamored");
+    assertNull(App.leftJoin(table1 , table2).get(0).get(2));
+  }
 }
