@@ -99,4 +99,8 @@ public class HashTable<K, V> {
       "bucketArray=" + bucketArray +
       '}';
   }
+
+  public int getBucketSize() {
+    return bucketSize;
+  }
 }

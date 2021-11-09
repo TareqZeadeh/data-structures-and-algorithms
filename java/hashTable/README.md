@@ -33,4 +33,14 @@ Big O for Space : O(n)
 
 ## Whiteboard Process
 ![tree_intersection](tree_intersection.jpg)
+## ===================================================================================
+## Challenge 33
+Write a function called left join that accepts   two hash maps and returns that's combine the key and corresponding values (if they exist) into the array according to LEFT JOIN logic.
+
+## Approach & Efficiency
+Big O for Time : O(n)
+Big O for Space : O(n)
+
+## Whiteboard Process
+![hashmap-left-join](hashmap-left-join.jpg)
 
