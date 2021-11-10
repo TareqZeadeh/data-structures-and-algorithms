@@ -67,6 +67,23 @@ public class App {
     return dictionary;
   }
 
+  //=================================challenge 34================================
+
+  public static boolean isStringUnique(String string){
+    HashMap<Character,Integer> stringChars = new HashMap<>();
+    String str = string.toLowerCase(Locale.ROOT);
+    for(char ch : str.toCharArray()){
+      if(ch != ' '){
+        if(stringChars.containsKey(ch)){
+          return false;
+        }
+        else
+          stringChars.put(ch, 1);
+      }
+    }
+    return true;
+  }
+
 
   public static void main(String[] args) {
     HashTable<String, Integer> hashTable = new HashTable<>();
@@ -143,5 +160,9 @@ public class App {
     table2.add("flow", "jam");
     table2.add("flow2", "jam");
     System.out.println(leftJoin(table1,table2));
+
+    //=================================challenge 34================================
+    String st = "Donald the duck";
+    System.out.println(isStringUnique(st));
   }
 }
