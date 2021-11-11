@@ -231,14 +231,17 @@ public class LinkedList {
     return list1;
   }
 
-  //=========================Is Palindrome=================================
+  //=========================Is Palindrome - not recommended=================================
   public boolean isPalindrome() {
+
     Node fast = head;
     Node slow = head;
+
     while (fast != null && fast.getNext() != null) {
       fast = fast.getNext().getNext();
       slow = slow.getNext();
     }
+
     slow = reversed(slow);
     fast = head;
     while (slow != null) {
@@ -248,6 +251,7 @@ public class LinkedList {
       slow = slow.getNext();
       fast = fast.getNext();
     }
+
     return true;
   }
 

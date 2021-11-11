@@ -3,13 +3,43 @@
  */
 package linked.list;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class App {
   public String getGreeting() {
     return "Hello World!";
   }
 
-
-
+public static boolean isListPalindrome(LinkedList list){
+  List<String> list1 = new ArrayList<>();
+  List<String> list2 = new ArrayList<>();
+  Node current = list.getHead();
+  while (current != null){
+    list1.add(current.getData());
+    current = current.getNext();
+  }
+  for (int i = list1.size() - 1; i > -1; i--){
+    list2.add(list1.get(i));
+  }
+  System.out.println(list1);
+  System.out.println(list2);
+//  for(int i=0; i<list1.size(); i++ ){
+//    if(!list1.get(i).equals(list2.get(i))){return false;}
+//  }
+  if(list1.toString().equals(list2.toString()))
+      return true;
+  else return false;
+}
+//=====================================
+  public static boolean isTextInList(LinkedList list, String string){
+    Node current = list.getHead();
+    while (current != null){
+      if(current.getData() == string){return true;}
+      current = current.getNext();
+    }
+    return false;
+  }
   public static void main(String[] args) {
 //        System.out.println(new App().getGreeting());
 
@@ -70,7 +100,13 @@ public class App {
     palindromeList.append("3");
     palindromeList.append("2");
     palindromeList.append("1");
-//    palindromeList.append("4");
-    System.out.println(palindromeList.isPalindrome());
+    palindromeList.append("4");
+    System.out.println(palindromeList);
+//    System.out.println(palindromeList.isPalindrome());
+    System.out.println(isListPalindrome(palindromeList));
+    System.out.println(palindromeList);
+    System.out.println(isTextInList(palindromeList,"fox"));
+    System.out.println(isTextInList(palindromeList,"4"));
   }
+
 }

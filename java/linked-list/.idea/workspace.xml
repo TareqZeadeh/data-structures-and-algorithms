@@ -7,15 +7,10 @@
     <list default="true" id="4ed9b267-78ac-4e90-9739-1f692b4adf00" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../array-insert-shift/array-insert-shift.svg:Zone.Identifier" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../array-reverse/array-reverse.svg:Zone.Identifier" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hashTable/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hashTable/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hashTable/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hashTable/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/linked/list/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/linked/list/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/linked/list/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/linked/list/LinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/linked/list/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/linked/list/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../stack-and-queue/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../stack-and-queue/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../stack-and-queue/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../stack-and-queue/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../stack-and-queue/.idea/misc.xml" afterDir="false" />
@@ -74,7 +69,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1636225610469</updated>
-      <workItem from="1636225612534" duration="3768000" />
+      <workItem from="1636225612534" duration="4012000" />
+      <workItem from="1636568528705" duration="8808000" />
     </task>
     <servers />
   </component>
