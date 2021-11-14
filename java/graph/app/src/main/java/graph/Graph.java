@@ -1,9 +1,6 @@
 package graph;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Graph<T> {
   private Map<T, GraphNode<T>> nodes = new HashMap<>();
@@ -55,5 +52,28 @@ public class Graph<T> {
 
   public int size() {
     return size;
+  }
+
+  public List<GraphNode<T>> breadthFirst(T data){
+    GraphNode<T> node = nodes.get(data);
+    if(node == null)
+      return null;
+    List<GraphNode<T>> nodesList = new ArrayList<>();
+    Set<GraphNode<T>> visited = new HashSet<>();
+    Queue<GraphNode<T>> queue = new ArrayDeque<>();
+    queue.add(node);
+    while (!queue.isEmpty()){
+      GraphNode<T> current = queue.remove();
+      if(visited.contains(current))
+        continue;
+      nodesList.add(current);
+      visited.add(current);
+      for (GraphNode<T> neighbour : adjList.get(current)){
+        if(!visited.contains(neighbour))
+          queue.add(neighbour);
+      }
+
+    }
+    return nodesList;
   }
 }
