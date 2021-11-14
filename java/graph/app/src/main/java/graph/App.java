@@ -19,11 +19,15 @@ public class App {
       graph.addNode("A");
       graph.addEdge("Tareq","osaid");
       graph.addEdge("T","A");
-      graph.addEdge("T","T");
+//      graph.addEdge("T","T");
       graph.addEdge("Tareq","mohammed");
       System.out.println(graph.getNeighbors("T"));
       System.out.println(graph.getNodes());
       System.out.println(graph.size());
+      System.out.println(graph.breadthFirst("T"));
+      System.out.println(graph.breadthFirst("Tareq"));
+      System.out.println(graph.breadthFirst("mohammed"));
+      System.out.println(graph.breadthFirst("rahaf"));
 
     }
 }
