@@ -37,3 +37,17 @@ Big O for space is : O(n^2)
 ![graph-breadth-first](graph-breadth-first.jpg)
 ## API
 - breadthFirst method : Will return a collection of nodes in the order they were visited.
+## ===========================================================
+## Challenge 37
+
+## Challenge
+- Create a method that takes a graph and array of city names and  return the cost or null.
+- ## Approach & Efficiency
+
+- Big O for time  : O(n)
+- Big O for space is : O(1)
+
+## Whiteboard Process
+![Challenge-37](Challenge-37.jpg)
+## API
+- businessTrip method : Will return the summation of the weight depending on the argument cities list.
