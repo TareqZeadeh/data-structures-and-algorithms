@@ -85,5 +85,21 @@ class AppTest {
     c.add("A");
     assertEquals("False, $0",Graph.businessTrip(graph,c));
   }
-
+  @Test void existingNodeDepthFirst(){
+    Graph<String,Integer> graph = new Graph<>();
+    List<String> c = new ArrayList<>();
+    graph.addNode("T");
+    graph.addNode("A");
+    c.add("T");
+    c.add("A");
+    graph.addEdge("T","A",10);
+    assertEquals("[T, A]",graph.depthFirst("T").toString());
+  }
+  @Test void notExistingNodeDepthFirst(){
+    Graph<String,Integer> graph = new Graph<>();
+    graph.addNode("T");
+    graph.addNode("A");
+    graph.addEdge("T","A");
+    assertNull(graph.depthFirst("G"));
+  }
 }

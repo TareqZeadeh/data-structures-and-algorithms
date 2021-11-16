@@ -51,3 +51,18 @@ Big O for space is : O(n^2)
 ![Challenge-37](Challenge-37.jpg)
 ## API
 - businessTrip method : Will return the summation of the weight depending on the argument cities list.
+
+## ===========================================================
+## Challenge 38
+
+## Challenge
+- Create a method that takes a graph Node  and return a collection of nodes in their pre-order depth-first traversal order.
+- ## Approach & Efficiency
+
+- Big O for time  : O(n^2)
+- Big O for space is : O(2)
+
+## Whiteboard Process
+![challeneg-38](challeneg-38.jpg)
+## API
+- depthFirst method : Will return a collection of nodes in their pre-order depth-first traversal order.
