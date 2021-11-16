@@ -17,6 +17,10 @@ public class App {
       graph.addNode("osaid");
       graph.addNode("mohammed");
       graph.addNode("rahaf");
+      graph.addNode("A");
+      graph.addNode("B");
+      graph.addNode("C");
+      graph.addNode("V");
 //      graph.addNode("doaa");
 //      graph.addNode("doaa");
 //      graph.addNode("T");
@@ -27,6 +31,10 @@ public class App {
       graph.addEdge("mohammed","osaid",25);
       graph.addEdge("mohammed","rahaf",45);
       graph.addEdge("osaid","rahaf",35);
+      graph.addEdge("osaid","A",35);
+      graph.addEdge("A","V",35);
+      graph.addEdge("osaid","B",35);
+      graph.addEdge("osaid","C",35);
 //      graph.addEdge("T","A");
 ////      graph.addEdge("T","T");
 //      graph.addEdge("Tareq","mohammed");
@@ -44,5 +52,7 @@ public class App {
     cities.add("osaid");
     cities.add("Tareq");
       System.out.println(Graph.businessTrip(graph,cities));
+      System.out.println("======================================================");
+      System.out.println(graph.depthFirst("osaid"));
     }
 }
