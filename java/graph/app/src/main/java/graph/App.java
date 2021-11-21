@@ -3,38 +3,65 @@
  */
 package graph;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class App {
 
+  public static boolean checkString(String str1,String str2){
+    if(str1.length() == 0 || str2.length() == 0 || str1.length() == 0 && str2.length() == 0){
+      System.out.println("One Or Both Of Strings Is Empty");
+    }
+    String string1Low = str1.replaceAll("\\s","").toLowerCase(Locale.ROOT);
+    String string2Low = str2.replaceAll("\\s","").toLowerCase(Locale.ROOT);
+    String []st1 = string1Low.split("");
+    String []st2 = string2Low.split("");
+    HashMap<String,Integer> string1 = new HashMap<>();
+    HashMap<String,Integer> string2 = new HashMap<>();
+    for (int i=0; i<st1.length; i++){
+        if(!string1.containsKey(st1[i])){
+          string1.put(st1[i],1);
+        }else {
+          string1.put(st1[i],string1.get(st1[i]) + 1);
+        }
+    }
+    for (int i=0; i<st2.length; i++){
+        if(!string2.containsKey(st2[i])){
+          string2.put(st2[i],1);
+        }else {
+          string2.put(st2[i],string2.get(st2[i]) + 1);
+        }
+    }
+    if(string1.equals(string2)){
+      return true;
+    }
+    return false;
+  }
 
+  public static void main(String[] args) {
 
-    public static void main(String[] args) {
-
-      Graph<String,Integer> graph = new Graph<>();
-      graph.addNode("Tareq");
-      graph.addNode("osaid");
-      graph.addNode("mohammed");
-      graph.addNode("rahaf");
-      graph.addNode("A");
-      graph.addNode("B");
-      graph.addNode("C");
-      graph.addNode("V");
+    Graph<String, Integer> graph = new Graph<>();
+    graph.addNode("Tareq");
+    graph.addNode("osaid");
+    graph.addNode("mohammed");
+    graph.addNode("rahaf");
+    graph.addNode("A");
+    graph.addNode("B");
+    graph.addNode("C");
+    graph.addNode("V");
 //      graph.addNode("doaa");
 //      graph.addNode("doaa");
 //      graph.addNode("T");
 //      graph.addNode("A");
-      graph.addEdge("Tareq","osaid",10);
-      graph.addEdge("Tareq","mohammed",20);
-      graph.addEdge("Tareq","rahaf",30);
-      graph.addEdge("mohammed","osaid",25);
-      graph.addEdge("mohammed","rahaf",45);
-      graph.addEdge("osaid","rahaf",35);
-      graph.addEdge("osaid","A",35);
-      graph.addEdge("A","V",35);
-      graph.addEdge("osaid","B",35);
-      graph.addEdge("osaid","C",35);
+    graph.addEdge("Tareq", "osaid", 10);
+    graph.addEdge("Tareq", "mohammed", 20);
+    graph.addEdge("Tareq", "rahaf", 30);
+    graph.addEdge("mohammed", "osaid", 25);
+    graph.addEdge("mohammed", "rahaf", 45);
+    graph.addEdge("osaid", "rahaf", 35);
+    graph.addEdge("osaid", "A", 35);
+    graph.addEdge("A", "V", 35);
+    graph.addEdge("osaid", "B", 35);
+    graph.addEdge("osaid", "C", 35);
 //      graph.addEdge("T","A");
 ////      graph.addEdge("T","T");
 //      graph.addEdge("Tareq","mohammed");
@@ -45,14 +72,36 @@ public class App {
 //      System.out.println(graph.breadthFirst("Tareq"));
 //      System.out.println(graph.breadthFirst("mohammed"));
 //      System.out.println(graph.breadthFirst("rahaf"));
-    List<String> cities = new ArrayList<>();
-    cities.add("Tareq");
-    cities.add("mohammed");
-    cities.add("rahaf");
-    cities.add("osaid");
-    cities.add("Tareq");
-      System.out.println(Graph.businessTrip(graph,cities));
-      System.out.println("======================================================");
-      System.out.println(graph.depthFirst("osaid"));
-    }
+//    List<String> cities = new ArrayList<>();
+//    cities.add("Tareq");
+//    cities.add("mohammed");
+//    cities.add("rahaf");
+//    cities.add("osaid");
+//    cities.add("Tareq");
+//      System.out.println(Graph.businessTrip(graph,cities));
+//      System.out.println("======================================================");
+//      System.out.println(graph.depthFirst("osaid"));
+//      System.out.println("======================================================");
+    Map<GraphNode<String, Integer>, List<GraphNode<String, Integer>>> adj;
+    adj = graph.getAdjList();
+
+    Set<GraphNode<String, Integer>> graphKeys = adj.keySet();
+//      System.out.println(graphKeys);
+//      System.out.println(adj);
+
+//    GraphNode<String, Integer> node1 = new GraphNode<>("osaid");
+//    GraphNode<String, Integer> node2 = new GraphNode<>("mohammed");
+//    System.out.println(graph.checkNeighbors(node1, node2, adj));
+//      var adj = graph.getAdjList();
+
+    System.out.println("======================================================");
+
+
+    String s1 = "Swear often";
+    String s2 = "Software";
+    System.out.println(checkString(s1,s2));
+  }
+
+
+
 }

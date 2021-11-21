@@ -1,11 +1,16 @@
 package graph;
 
+import javax.swing.text.html.HTMLDocument;
 import java.util.*;
 
 public class Graph<T, W> {
   private Map<T, GraphNode<T, W>> nodes = new HashMap<>();
   private Map<GraphNode<T, W>, List<GraphNode<T, W>>> adjList = new HashMap<>();
   int size = 0;
+
+  public Map<GraphNode<T, W>, List<GraphNode<T, W>>> getAdjList() {
+    return adjList;
+  }
 
   public GraphNode<T, W> addNode(T data) {
     int nodesSize = nodes.size();
@@ -145,4 +150,23 @@ public class Graph<T, W> {
     return list;
   }
 
+  public boolean checkNeighbors(GraphNode<T, W> node1, GraphNode<T, W> node2, Map<GraphNode<T, W>, List<GraphNode<T, W>>> graph){
+    if(node1==null || node2 == null || graph.size()==0){
+      System.out.println("One Or All Of The Arguments Is Empty Or Null");
+      return false;
+    }
+    List<GraphNode<T,W>> neighborsList = new ArrayList<>();
+    List<GraphNode<T,W>> graphKeys = new ArrayList<>(graph.keySet());
+    for (GraphNode<T, W> node : graphKeys) {
+      if (node.toString().equals(node1.toString())) {
+        neighborsList = graph.get(node1);
+        break;
+      }
+    }
+    for(GraphNode<T,W> neighbor : neighborsList){
+      if(neighbor.toString().equals(node2.toString()))
+        return  true;
+    }
+    return false;
+  }
 }
