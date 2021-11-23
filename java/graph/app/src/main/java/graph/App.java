@@ -7,34 +7,63 @@ import java.util.*;
 
 public class App {
 
-  public static boolean checkString(String str1,String str2){
-    if(str1.length() == 0 || str2.length() == 0 || str1.length() == 0 && str2.length() == 0){
+  public static boolean checkString(String str1, String str2) {
+    if (str1.length() == 0 || str2.length() == 0 || str1.length() == 0 && str2.length() == 0) {
       System.out.println("One Or Both Of Strings Is Empty");
     }
-    String string1Low = str1.replaceAll("\\s","").toLowerCase(Locale.ROOT);
-    String string2Low = str2.replaceAll("\\s","").toLowerCase(Locale.ROOT);
-    String []st1 = string1Low.split("");
-    String []st2 = string2Low.split("");
-    HashMap<String,Integer> string1 = new HashMap<>();
-    HashMap<String,Integer> string2 = new HashMap<>();
-    for (int i=0; i<st1.length; i++){
-        if(!string1.containsKey(st1[i])){
-          string1.put(st1[i],1);
-        }else {
-          string1.put(st1[i],string1.get(st1[i]) + 1);
-        }
+    String string1Low = str1.replaceAll("\\s", "").toLowerCase(Locale.ROOT);
+    String string2Low = str2.replaceAll("\\s", "").toLowerCase(Locale.ROOT);
+    String[] st1 = string1Low.split("");
+    String[] st2 = string2Low.split("");
+    HashMap<String, Integer> string1 = new HashMap<>();
+    HashMap<String, Integer> string2 = new HashMap<>();
+    for (int i = 0; i < st1.length; i++) {
+      if (!string1.containsKey(st1[i])) {
+        string1.put(st1[i], 1);
+      } else {
+        string1.put(st1[i], string1.get(st1[i]) + 1);
+      }
     }
-    for (int i=0; i<st2.length; i++){
-        if(!string2.containsKey(st2[i])){
-          string2.put(st2[i],1);
-        }else {
-          string2.put(st2[i],string2.get(st2[i]) + 1);
-        }
+    for (int i = 0; i < st2.length; i++) {
+      if (!string2.containsKey(st2[i])) {
+        string2.put(st2[i], 1);
+      } else {
+        string2.put(st2[i], string2.get(st2[i]) + 1);
+      }
     }
-    if(string1.equals(string2)){
+    if (string1.equals(string2)) {
       return true;
     }
     return false;
+  }
+
+  public static String findSpace(String url) {
+    if (url.length() == 0)
+      return "";
+    StringBuilder str = new StringBuilder();
+    for (int i = 0; i < url.length(); i++) {
+      if (url.charAt(i) == ' ') {
+        str.append("%20");
+      } else {
+        str.append(url.charAt(i));
+      }
+    }
+    return str.toString();
+  }
+
+  public static String romanNumerals(int num) {
+    if (num<=0 || num>5000)
+      return "Invalid Number";
+    int[] dec = { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };
+    String[] rom = { "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" };
+    StringBuilder ansVal = new StringBuilder();
+    for (int i=0; i<dec.length; i++){
+      while (num>=dec[i]){
+        num -=dec[i];
+        ansVal.append(rom[i]);
+      }
+    }
+    return ansVal.toString();
   }
 
   public static void main(String[] args) {
@@ -99,9 +128,14 @@ public class App {
 
     String s1 = "Swear often";
     String s2 = "Software";
-    System.out.println(checkString(s1,s2));
-  }
+    System.out.println(checkString(s1, s2));
 
+    String url = "http://code.org/hour of code.html";
+    System.out.println(url);
+    System.out.println(findSpace(url));
+
+    System.out.println(romanNumerals(4994));
+  }
 
 
 }
